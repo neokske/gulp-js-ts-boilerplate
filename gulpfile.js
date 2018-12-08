@@ -11,14 +11,14 @@ gulp.task("babel", () => {
   return gulp
     .src(jsWatch)
     .pipe(babel({ presets: ["@babel/preset-env"] }))
-    .pipe(gulp.dest("built/babelOut"));
+    .pipe(gulp.dest("build/babelOut"));
 });
 
 gulp.task("ts", () => {
   return gulp
     .src(tsWatch)
     .pipe(tsProject())
-    .pipe(gulp.dest("built/tsOut"));
+    .pipe(gulp.dest("build/tsOut"));
 });
 
 gulp.task("default", ["babel", "ts"], () => {
